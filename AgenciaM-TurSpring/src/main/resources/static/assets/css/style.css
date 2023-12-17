@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.conteiner-principal {
+	position: relative;
+	min-height: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.conteiner-segundario {
+	padding-bottom: 2rem;
+	padding-top: 6.8rem;
+
+}
+
+.conteiner-contato-index {
+	height: 200px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.texto-contato-index-1 {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.texto-contato-index-2 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.texto-promocao-index {
+	font-family: Shadows Into Light, cursive;
+	font-size: 40px;
+}
+
+.rodape {
+	position: absolute;
+}
+
+.botao {
+	border-radius: 23px 6px !important;
+	height: 40px;
+	width: 95px;
+}
+
+.botao2 {
+	border-radius: 23px 6px !important;
+}
+
+.icons-cards {
+	margin-left: 115px;
+}
+
+.icons-tabelas {
+	margin-left: 500px;
+}
