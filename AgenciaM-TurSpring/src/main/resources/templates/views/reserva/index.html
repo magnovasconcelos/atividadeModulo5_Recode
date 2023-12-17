@@ -28,16 +28,12 @@
 				</button>
 				<section class="section navbar-collapse" id="navTur">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-						<li class="nav-item"><a class="nav-link active" href="/AgenciaM-TurMvc/index.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link active" href="/AgenciaM-TurMvc/destino">Destinos</a>
-						</li>
-						<li class="nav-item"><a class="nav-link active"
-								href="/AgenciaM-TurMvc/views/promocoes/index.html">Promoções</a></li>
-						<li class="nav-item"><a class="nav-link active" href="/AgenciaM-TurMvc/contato">Contato</a></li>
-						<li class="nav-item"><a class="nav-link active" href="/AgenciaM-TurMvc/cliente">Cadastro</a>
-						</li>
-						<li class="nav-item"><a class="nav-link active" href="/AgenciaM-TurMvc/reserva">Reservas</a>
-						</li>
+						<li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+						<li class="nav-item"><a class="nav-link active" href="/destino">Destinos</a></li>
+						<li class="nav-item"><a class="nav-link active" href="/reserva">Reservas</a></li>
+						<li class="nav-item"><a class="nav-link active" href="/promocoes">Promoções</a></li>
+						<li class="nav-item"><a class="nav-link active" href="/contato">Contato</a></li>
+						<li class="nav-item"><a class="nav-link active" href="/cliente">Cadastro</a></li>
 					</ul>
 					<div class="d-flex">
 						<a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
@@ -55,8 +51,8 @@
 				<section class="container">
 
 					<div class="p-4">
-						<a th:href="@{/reserva-cadastrar}" class="btn btn-dark mb-2 botao"> Novo </a> <a
-							th:href="@{/}" class="btn btn-dark mb-2 botao">Voltar</a>
+						<a th:href="@{/destino}" class="btn btn-dark mb-2 botao"> Novo </a> <a th:href="@{/}"
+							class="btn btn-dark mb-2 botao">Voltar</a>
 						<table class="table table-responsive table-hover text-center">
 							<thead class="table-dark">
 								<tr>
@@ -79,10 +75,11 @@
 									<td th:text="${reserva.destino.id}"></td>
 									<td>
 										<div class="d-flex">
-											<a href="reserva-editar?numeroReserva=${r.numeroReserva}" class="mx-1"
-												title="Editar"> <i class="bi bi-pencil-square"></i>
-											</a> <a th:href="@{/reserva-deletar/{numeroReserva}(numeroReserva=${reserva.numeroReserva})}" class="mx-1"
-												title="Remover"
+											<a th:href="@{/reserva-editar/numeroReserva={numeroReserva}/idDestino={id}(numeroReserva=${reserva.numeroReserva},id=${reserva.destino.id})}"
+												class="mx-1" title="Editar"> <i class="bi bi-pencil-square"></i>
+											</a> <a
+												th:href="@{/reserva-deletar/{numeroReserva}(numeroReserva=${reserva.numeroReserva})}"
+												class="mx-1" title="Remover"
 												onclick="return confirm('Deseja excluir a reserva do número ${r.numeroReserva}.')">
 												<i class="bi bi-trash"></i>
 											</a>

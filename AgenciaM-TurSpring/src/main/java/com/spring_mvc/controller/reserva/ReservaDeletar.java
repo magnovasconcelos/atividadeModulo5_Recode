@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring_mvc.model.Cliente;
-import com.spring_mvc.model.Contato;
 import com.spring_mvc.model.Destino;
 import com.spring_mvc.model.Reserva;
-import com.spring_mvc.repository.ContatoRepository;
 import com.spring_mvc.repository.ReservaRepository;
 
 @Controller

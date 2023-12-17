@@ -1,28 +1,27 @@
-package com.spring_mvc.controller.cliente;
-
-import java.util.List;
+package com.spring_mvc.controller.promocao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring_mvc.model.Cliente;
 import com.spring_mvc.repository.ClienteRepository;
 
 @Controller
-@RequestMapping("/cliente")
-public class ClienteListar {
-	
+@RequestMapping("/")
+public class ClienteDeletar {
+
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
-	@GetMapping
-	public ModelAndView cliente() {
-		ModelAndView model = new ModelAndView("views/cliente/index.html");
-		List<Cliente> clientes = clienteRepository.findAll();		
-		model.addObject("clientes", clientes);
+
+	@GetMapping("/cliente-deletar/{cpf}")
+	public ModelAndView deletar(@PathVariable String cpf) {
+		ModelAndView model = new ModelAndView("redirect:/cliente");
+
+		clienteRepository.deleteById(cpf);
+
 		return model;
 	}
 }
